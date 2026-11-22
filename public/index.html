@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090d18">
+  <title>INCOGNIX Playground</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <main class="shell">
+    <nav class="nav">
+      <a class="brand" href="/"><span class="brand-mark">I</span><span>INCOGNIX<span class="muted"> / PLAYGROUND</span></span></a>
+      <a class="github" href="https://github.com/harshmaurya140-tech/incognix-core" target="_blank" rel="noreferrer">View core on GitHub ↗</a>
+    </nav>
+
+    <section class="hero">
+      <div class="eyebrow"><span class="pulse"></span> LOCAL-FIRST PRIVACY ENGINE</div>
+      <h1>Your data.<br><span>Under your control.</span></h1>
+      <p class="intro">Explore how <strong>incognix-core</strong> detects sensitive information, assesses exposure risk, and replaces private values with reversible tokens.</p>
+    </section>
+
+    <section class="workspace">
+      <div class="section-head">
+        <div><div class="step">01 / INPUT</div><h2>Test your text</h2></div>
+        <button class="text-button" id="loadSample">Load sample ↗</button>
+      </div>
+      <label class="field-label" for="inputText">TEXT TO ANALYSE</label>
+      <textarea id="inputText" spellcheck="false" placeholder="Paste sample text here..."></textarea>
+      <div class="actions">
+        <button class="button secondary" id="scanBtn">Scan for risks</button>
+        <button class="button primary" id="redactBtn">Redact sensitive data <span>→</span></button>
+      </div>
+      <p class="hint">Use synthetic examples. Do not paste real passwords, API keys, payment details, or personal data.</p>
+    </section>
+
+    <section class="results" id="results" hidden>
+      <div class="section-head">
+        <div><div class="step">02 / ANALYSIS</div><h2>Privacy report</h2></div>
+        <span class="status" id="status">ANALYSED</span>
+      </div>
+      <div class="metrics">
+        <div class="metric"><span>RISK SCORE</span><strong id="riskScore">—</strong></div>
+        <div class="metric"><span>RISK LEVEL</span><strong id="riskLevel">—</strong></div>
+        <div class="metric"><span>FINDINGS</span><strong id="findingCount">—</strong></div>
+      </div>
+      <div class="panel">
+        <div class="panel-title">DETECTED ITEMS</div>
+        <div id="findings" class="findings"></div>
+      </div>
+      <div class="panel" id="redactedPanel" hidden>
+        <div class="panel-title">PROTECTED OUTPUT</div>
+        <pre id="redactedOutput"></pre>
+        <div class="panel-actions">
+          <button class="button secondary small" id="copyRedacted">Copy protected text</button>
+          <button class="button primary small" id="restoreBtn">Restore original text</button>
+        </div>
+        <div class="restore-result" id="restoreResult" hidden></div>
+      </div>
+    </section>
+    <footer><span>INCOGNIX CORE · DEMONSTRATION</span><span>Detection is heuristic, not a guarantee of finding every secret.</span></footer>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="/app.js" defer></script>
+</body>
+</html>

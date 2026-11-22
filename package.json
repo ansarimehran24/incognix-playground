@@ -1,0 +1,16 @@
+{
+  "name": "incognix-playground",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A demo application powered by the incognix-core npm package",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "incognix-core": "github:harshmaurya140-tech/incognix-core"
+  }
+}
